@@ -53,7 +53,7 @@ namespace SalesSystem.Configuration
                     .OnDelete(DeleteBehavior.SetNull);
 
                 builder.HasOne(c => c.Employee)
-                    .WithMany(e => e.Customer)
+                    .WithMany(e => e.Customers)
                     .HasForeignKey(c => c.SalesRepEmployeNumber)
                     .OnDelete(DeleteBehavior.SetNull); 
             }
