@@ -17,5 +17,7 @@ namespace SalesSystem.Models
         public int PostalCode { get; set; }
         public string Territory { get; set; }
 
+        public virtual ICollection<Employee> Employees { get; set; }=new HashSet<Employee>();
+
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SalesSystem.Models
 {
-    internal class Order
+    public class Order
     {
         public int Id { get; set; }
         public DateOnly Orderdate { get; set; }
@@ -15,5 +15,9 @@ namespace SalesSystem.Models
 		public int Status { get; set; }
 
 		public string Comments { get; set; }
+
+		public virtual ICollection<OrderProduct>? OrderProducts { get; set; } = new HashSet<OrderProduct>();
+
+		public virtual Customer Customer { get; set; }
     }
 }

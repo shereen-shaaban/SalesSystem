@@ -10,5 +10,6 @@ namespace SalesSystem.Models
         public string Image { get; set; }
         public string DescLNText { get; set; }
         public string DescLNHtml { get; set; }
+        public virtual ICollection<Product>?Products { get; set; }=new HashSet<Product>();
     }
 }

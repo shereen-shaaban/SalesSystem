@@ -7,7 +7,7 @@ namespace SalesSystem.Models
     public class Customer
     {
         public int Id { get; set; }
-		public int SalesRepEmployeNumber { get; set; }
+		public int? SalesRepEmployeNumber { get; set; }
 
 		public string Name { get; set; }
 		public string FName { get; set; }
@@ -21,6 +21,10 @@ namespace SalesSystem.Models
         public string Phone { get; set; }
         public string State { get; set; }
         public decimal CreditLimit { get; set; }
+
+        public  virtual ICollection<Order>?Orders { get; set; }=new HashSet<Order>();
+        public virtual ICollection<Payment>?Payments { get; set; }=new HashSet<Payment>();
+        public virtual Employee? Employee { get; set; }
 
     }
 }
