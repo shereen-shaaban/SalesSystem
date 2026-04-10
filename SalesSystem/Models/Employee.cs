@@ -15,8 +15,11 @@ namespace SalesSystem.Models
 		public string JobTitle { get; set; }
 		public int ReportsTo { get; set; }
         public int? Managerid { get; set; }
-		//public virtual Employee Manager { get; set; }
-		//public virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+		public virtual ICollection<Customer>? Customer { get; set; }
+		public virtual Employee? Manager { get; set; }
+		public	virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
+
+		public virtual Office Office { get; set; }
 
 
 
