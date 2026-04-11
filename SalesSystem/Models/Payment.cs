@@ -10,6 +10,8 @@ namespace SalesSystem.Models
         public int CustomerId { get; set; }
         public DateOnly PaymebntDate { get; set; }
         public decimal Amount { get; set; }
-        public virtual Customer Customer { get; set; }
+
+		//navigation properties
+		public virtual Customer? Customer { get; set; }
     }
 }

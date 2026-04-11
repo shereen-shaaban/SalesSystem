@@ -16,7 +16,9 @@ namespace SalesSystem.Models
         public decimal BuyPrice { get; set; }
         public string MSPR { get; set; }
 
-        public virtual ProductLine ProductLine { get; set; }
+
+		//navigation properties
+		public virtual ProductLine? ProductLine { get; set; }
         public virtual ICollection<OrderProduct>?OrderProducts { get; set; }=new HashSet<OrderProduct>();
 
 
