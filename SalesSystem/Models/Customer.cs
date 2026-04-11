@@ -22,7 +22,8 @@ namespace SalesSystem.Models
         public string State { get; set; }
         public decimal CreditLimit { get; set; }
 
-        public  virtual ICollection<Order>?Orders { get; set; }=new HashSet<Order>();
+		//navigation properties
+		public virtual ICollection<Order>?Orders { get; set; }=new HashSet<Order>();
         public virtual ICollection<Payment>?Payments { get; set; }=new HashSet<Payment>();
         public virtual Employee? Employee { get; set; }
 

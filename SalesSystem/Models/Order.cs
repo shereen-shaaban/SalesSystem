@@ -16,8 +16,10 @@ namespace SalesSystem.Models
 
 		public string Comments { get; set; }
 
+
+		//navigation properties
 		public virtual ICollection<OrderProduct>? OrderProducts { get; set; } = new HashSet<OrderProduct>();
 
-		public virtual Customer Customer { get; set; }
+		public virtual Customer? Customer { get; set; }
     }
 }

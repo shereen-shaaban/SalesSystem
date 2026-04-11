@@ -13,8 +13,10 @@ namespace SalesSystem.Models
 		public int Quantity { get; set; }
 		public decimal PriceForeachproductorder { get; set; }
 
-		public virtual Order Order { get; set; }
-		public virtual Product Product { get; set; }
+
+		//navigation properties
+		public virtual Order? Order { get; set; }
+		public virtual Product? Product { get; set; }
 
 
 	}
