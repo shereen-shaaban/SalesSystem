@@ -25,7 +25,6 @@ namespace SalesSystem.Models
 		// Navigation properties
 		public virtual Employee? Manager { get; set; }
 		public virtual Office? Office { get; set; }
-		public virtual ICollection<Customer>? Customers { get; set; }=new HashSet<Customer>();
 		public	virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
 		public virtual ICollection<Employeecustomer>? Employeecustomers { get; set; }=new HashSet<Employeecustomer>();
 
