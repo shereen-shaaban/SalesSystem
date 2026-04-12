@@ -16,11 +16,9 @@ namespace SalesSystem.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-
-            base.OnModelCreating(modelBuilder);
+			modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDBContext).Assembly);
+			base.OnModelCreating(modelBuilder);
         }
-
-
 
 		//local containers
 		public DbSet<Models.Office> Offices { get; set; }
