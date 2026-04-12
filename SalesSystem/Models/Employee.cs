@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using Microsoft.Identity.Client;
 
 namespace SalesSystem.Models
 {
@@ -16,7 +17,7 @@ namespace SalesSystem.Models
 		public string? Email { get; set; }
         public string? Extension { get; set; }
 		public string? JobTitle { get; set; }
-        public int? Managerid { get; set; }
+        public Guid? Managerid { get; set; }
 
 
 
@@ -26,10 +27,11 @@ namespace SalesSystem.Models
 		public virtual Office? Office { get; set; }
 		public virtual ICollection<Customer>? Customers { get; set; }=new HashSet<Customer>();
 		public	virtual ICollection<Employee> Employees { get; set; } = new List<Employee>();
-
-	
-
+		public virtual ICollection<Employeecustomer>? Employeecustomers { get; set; }=new HashSet<Employeecustomer>();
 
 
-    }
+
+
+
+	}
 }
