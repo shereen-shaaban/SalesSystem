@@ -55,6 +55,15 @@ namespace SalesSystem.mysystemrequirements
 				product line ======>can has zero or more products
 		*/
 
+		#region  notes to  my database
 
+		/*
+		 * update customer table to have column fullname instead of first and last name  
+		 * in employee table when we enter new emploee we hav two options 
+			1- by admin  then he can add employee to the department by name or show all managers id to him to add him by it's manager 
+			2- by manager of department so automatic add employee and automatic add that manager id 
+		 * new product then it's new product line then after product line added by admin  automatic add row  in product table with auto id and same product line id
+		 */
+		#endregion
 	}
 }
