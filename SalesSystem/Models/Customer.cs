@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 using System.Text;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace SalesSystem.Models
 {
@@ -8,10 +12,22 @@ namespace SalesSystem.Models
     {
         public int Id { get; set; }
 		public Guid? SalesRepEmployeNumber { get; set; }
-
-		public string Name { get; set; }
 		public string FName { get; set; }
 		public string LName { get; set; }
+		public string Name { get; set
+			{
+				if (FName == null & LName == null)
+					value = null;
+				else if (FName == null)
+					value = LName;
+				else if (LName == null)
+					value = Name;
+				else
+					value = FName + LName;
+			}
+
+			}
+			
 		public string Address1 { get; set; }
 		public string Address2 { get; set; }
 		public string City { get; set; }

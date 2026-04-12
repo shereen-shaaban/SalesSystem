@@ -18,9 +18,9 @@ namespace SalesSystem.Configuration
                 //property configurations
                 builder.HasKey(p => p.Code);
                 builder.Property(p => p.ProductLineID).HasColumnType("int").IsRequired();
-                builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
+                builder.Property(p => p.Name).HasMaxLength(100).IsRequired(false);
                 builder.Property(p => p.Scale).IsRequired();
-                builder.Property(p => p.Vendor).HasMaxLength(100).IsRequired();
+                builder.Property(p => p.Vendor).HasMaxLength(100).IsRequired(false);
                 builder.Property(p => p.ProductDescription).HasMaxLength(500).IsRequired(false);
                 builder.Property(p => p.QuantityINstock).IsRequired();
 				builder.Property(p => p.BuyPrice).HasColumnType("decimal(19,0)").IsRequired();
@@ -90,9 +90,9 @@ namespace SalesSystem.Configuration
                 builder.HasKey(c => c.Id);
                 //builder.Property(c => c.Id).HasColumnType("int").HasPrecision(10, 0);
                 //builder.Property(c => c.SalesRepEmployeNumber).IsRequired(false);
-				builder.Ignore(c => c.Name);
-                builder.Property(c => c.FName).HasMaxLength(50).IsRequired(false).HasColumnName("FirstName");
-                builder.Property(c => c.LName).HasMaxLength(50).IsRequired(false).HasColumnName("LastName");
+				builder.Property(c => c.Name).HasMaxLength(100).IsRequired(false).HasColumnName("fullname");
+                builder.Ignore(c => c.FName);
+                builder.Ignore(c => c.LName);
                 builder.Property(c => c.Address1).HasMaxLength(100).IsRequired(false).HasColumnName("address");
                 builder.Property(c => c.Address2).HasMaxLength(100).IsRequired(false).HasColumnName("second address");
                 builder.Property(c => c.City).HasMaxLength(50).IsRequired(false);
@@ -103,7 +103,7 @@ namespace SalesSystem.Configuration
                 builder.Property(c => c.CreditLimit).HasColumnType("decimal(19,0)").IsRequired();
 
 				//constraints
-                builder.HasIndex(c => new { c.Address1, c.Address2, c.City, c.Region, c.Country,c.FName,c.LName }).IsUnique();//not allow cust same name and same address 
+                builder.HasIndex(c => new { c.Address1, c.Address2, c.City, c.Region, c.Country,c.Name }).IsUnique();//not allow cust same name and same address 
 				//property configurations
 
 				//no need to make it again
