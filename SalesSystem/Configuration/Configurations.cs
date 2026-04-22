@@ -16,7 +16,7 @@ namespace SalesSystem.Configuration
             {
 
                 //property configurations
-                builder.HasKey(p => p.Code);
+                builder.HasKey(p => p.Code); 
                 builder.Property(p => p.ProductLineID).HasColumnType("int").IsRequired();
                 builder.Property(p => p.Name).HasMaxLength(100).IsRequired(false);
                 builder.Property(p => p.Scale).IsRequired();
